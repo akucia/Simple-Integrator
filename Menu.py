@@ -26,9 +26,9 @@ class Menu(object):
         allows selections of item from displayed menu
         :return: int, selected number
         """
-        print("Please select number:")
+
         self.show()
-        selection = raw_input()
+        selection = raw_input("Please select number:")
         if selection in self.menuDict.values():
             return selection
         else:

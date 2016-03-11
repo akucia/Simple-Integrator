@@ -18,7 +18,7 @@ class InputReader(object):
         :return: list of parameters
         """
         while True:
-            usrInput = raw_input("Please provide: polynomial,min,max,dx:")
+            usrInput = raw_input("Please provide: polynomial,min,max,step:")
             usrInput = usrInput[5:].split(',')                  # splitting different parameters
             if self.validator.validateParameters(usrInput):     # run the validation
                 return usrInput
