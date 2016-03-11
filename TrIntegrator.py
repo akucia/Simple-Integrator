@@ -1,22 +1,24 @@
 class TrIntegrator(object):
+    """
+    contains integration engine
+    """
     def __init__(self):
-        """
-        should be merged with "integrate" method
-        :param :
-        :return:
-        """
+       """
+
+       :return: none
+       """
     def integrate(self, function, minVal, maxVal, dx):
         """
-
-        :param function:
-        :param minVal:
-        :param maxVal:
-        :param dx:
-        :return:
+        simple integration using trapezes method
+        :param function: any function, that returns float
+        :param minVal: float, begining of the interval
+        :param maxVal: float, end of the interval
+        :param dx: float, integration step
+        :return: float, result of calculations
         """
         result = 0
         print("calculating integral...")
-        while minVal < maxVal:
+        while minVal < maxVal:                                # calculate integral using trapezes method
             result += dx*(function(minVal)+function(minVal + dx))/2
             minVal += dx
         return result

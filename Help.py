@@ -1,11 +1,17 @@
 class Help(object):
     """
-    not implemented yet...
-    """
 
+    """
     def __init__(self):
-        help = '?'
+       """
+
+       :return:
+       """
     def show(self):
+        """
+        prints on screen instructions
+        :return:
+        """
         print("Available functionalities:")
         print("1.Single Integral")
         print("---Program ask user for input in the following form:")

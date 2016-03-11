@@ -4,11 +4,12 @@ from History import History
 from InputReader import InputReader
 from Help import Help
 
+# creating necessary objects
 log = History()
 menu = Menu()
 reader = InputReader()
 sub = Integrals()
-help = Help()
+myHelp = Help()
 
 while True:
 
@@ -26,7 +27,7 @@ while True:
         log.show()
         raw_input("Press any key to close...")
     elif selection == '4':              # choosing help
-        help.show()
+        myHelp.show()
         raw_input("Press any key to close...")
 
 if not(log.isEmpty()):                  # displays this session's history only if there is something to show

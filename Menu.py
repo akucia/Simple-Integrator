@@ -1,19 +1,19 @@
 class Menu(object):
     """
-
+    contains methods for displaying menu
     """
     def __init__(self):
         """
-
-        :return:
+        creates variables containing name and dictionary of avilable actions
+        :return: none
         """
         self.name = "---Main Menu---"
         self.menuDict = {'1.Single Integration': '1', '2.Many Integrations': '2', '3.History': '3', '4.Help' : '4', "Press 'q' to quit" : 'q'}
 
     def show(self):
         """
-
-        :return:
+        prints menu on screen
+        :return: none
         """
         print(self.name)
         for item in sorted(self.menuDict.keys()):
@@ -23,10 +23,10 @@ class Menu(object):
 
     def select(self):
         """
-
-        :return:
+        allows selections of item from displayed menu
+        :return: int, selected number
         """
-        print("Please Select:")
+        print("Please select number:")
         self.show()
         selection = raw_input()
         if selection in self.menuDict.values():

@@ -1,50 +1,53 @@
 from InputValidator import InputValidator
 
 
-class InputReader:
+class InputReader(object):
+    """
+    contains user input methods
+    """
     def __init__(self):
         """
 
         :return:
         """
-        self.validator = InputValidator()
+        self.validator = InputValidator()                       # initialize the validating engine
 
     def consoleInput(self):
         """
-        needs docs
-        :return: function, imported polynomial
+        terminal input method
+        :return: list of parameters
         """
         while True:
             usrInput = raw_input("Please provide: polynomial,min,max,dx:")
-            usrInput = usrInput[5:].split(',')
-            if self.validator.validateParameters(usrInput):
+            usrInput = usrInput[5:].split(',')                  # splitting different parameters
+            if self.validator.validateParameters(usrInput):     # run the validation
                 return usrInput
-            elif self.yesNoInput("Try again?"):
+            elif self.yesNoInput("Try again?"):                 # if validation fails, ask to try again
                 continue
             else:
                 return []
 
     def fileInput(self):
         """
-        this function needs... everything
+        reading from file method
         :return:
         """
         while True:
             fileName = raw_input("Please enter name of the file: ")
-            if self.validator.validateFile(fileName):
-                with open(fileName, 'r') as f:
-                    fileContent = f.readlines()
+            if self.validator.validateFile(fileName):           # run the validation
+                with open(fileName, 'r') as f:                  # open file
+                    fileContent = f.readlines()                 # read the contents
                     return fileContent
-            elif self.yesNoInput("Try again?"):
+            elif self.yesNoInput("Try again?"):                 # if validation fails, ask to try again
                     continue
             else:
                 return []
 
     def yesNoInput(self, string):
         """
-        needs docs
-        :param string:
-        :return:
+        simple user decision
+        :param string: question displayed
+        :return: bool: true or false
         """
         while True :
             usrAction = raw_input(string + " y/n:")

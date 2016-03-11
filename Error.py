@@ -16,7 +16,7 @@ class Error(Exception):
         elif self.value == "NAN":
             print("Please enter a valid numbers as parameters")
         elif self.value == "polynomial":
-            print("Please enter a valid polynomial")
+            print("Please enter a valid polynomial. Read help to see how a valid polynomial looks like.")
         elif self.value == "tooFew":
             print("Please enter all parameters")
 
