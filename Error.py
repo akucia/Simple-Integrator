@@ -19,5 +19,7 @@ class Error(Exception):
             print("Please enter a valid polynomial. Read help to see how a valid polynomial looks like.")
         elif self.value == "tooFew":
             print("Please enter all parameters")
+        elif self.value == "smalldx":
+            print("Please use step bigger than '0.00000001' ")
 
 

@@ -18,7 +18,8 @@ class TrIntegrator(object):
         """
         result = 0
         print("calculating integral...")
-        while minVal < maxVal:                                # calculate integral using trapezes method
+        while minVal < maxVal:                                  # calculate integral using trapezes method
             result += dx*(function(minVal)+function(minVal + dx))/2
             minVal += dx
+        result = round(x, len(dx))                              # round the result
         return result

@@ -30,6 +30,8 @@ class InputValidator(object):
                     dx = float(parameters[3])
                     if dx <= 0:                         # is the step a positive number?
                         raise Error("dx")
+                    elif dx < 0.00000001:
+                        raise Error("smalldx")
                     elif max <= min:                    # is the interval positive number?
                         raise Error("minmax")
                     elif len(polynomial) <= 0:          # does the polynomial contain any characters?
