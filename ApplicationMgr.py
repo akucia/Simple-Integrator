@@ -12,24 +12,24 @@ help = Help()
 
 while True:
 
-    selection = menu.select()
+    selection = menu.select()           #
 
-    if selection == 'q':
+    if selection == 'q':                # Quiting the main menu
         break
-    elif selection == '1':
+    elif selection == '1':              # choosing single integral option
         result = sub.singleIntegral()
         log.add(result)
-    elif selection == '2':
+    elif selection == '2':              # choosing many integrals
         results = sub.manyIntegrals()
         log.add(results)
-    elif selection == '3':
+    elif selection == '3':              # choosing history
         log.show()
         raw_input("Press any key to close...")
-    elif selection == '4':
+    elif selection == '4':              # choosing help
         help.show()
         raw_input("Press any key to close...")
 
-if not(log.isEmpty()):
+if not(log.isEmpty()):                  # displays this session's history only if there is something to show
     log.show()
     if reader.yesNoInput("Save history to file?"):
         log.saveToFile()
