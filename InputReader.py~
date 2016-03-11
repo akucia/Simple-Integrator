@@ -1,0 +1,14 @@
+#!/usr/bin/evc python
+
+class InputReader:
+    def __init__ (self):
+        self.fileName = raw_input("Please enter source file name:")
+    def getInput(self):
+        fileRead = open(self.fileName, 'r')
+        return fileRead.read()
+
+
+"""Test"""
+data = InputReader()
+print(data.getInput())
+

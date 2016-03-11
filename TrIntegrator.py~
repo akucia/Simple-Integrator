@@ -1,0 +1,20 @@
+#!/usr/bin/evc python
+class TrIntegrator:
+    def __init__(self,dx):
+        self.dx  = dx
+        """ inicjalizacja obiektu wartością kroku całkowania"""
+    def integrate(self,function,min,max):
+        "metoda wykonująca całkowanie"
+        result  = 0
+        while min < max:
+            result += self.dx*(function(min)+function(min + self.dx))/2
+            min += self.dx
+        return result
+
+"""Test"""
+g = lambda x: x
+test = TrIntegrator(0.001)
+num = test.integrate(g,0,1)
+print(num)
+
+
